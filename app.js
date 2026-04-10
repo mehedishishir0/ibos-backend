@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const createError = require("http-errors");
 const { errorResponse } = require("./response/response");
+const quzeRouter = require("./routes/quzeRoute");
 const app = express();
 
 
@@ -15,7 +16,7 @@ app.use(cors({
 
 // routes
 app.use("/api/v1/auth", require("./routes/authRoute"));
-
+app.use("/api/v1/quze", quzeRouter)
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
