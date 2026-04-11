@@ -69,9 +69,9 @@ const getSingleTestWithQuestion = async (req, res) => {
 
 const updateTestWithQuestions = async (req, res) => {
   try {
-    const { testId } = req.params;
+    const { id } = req.params;
 
-    const updatedTest = await Test.findByIdAndUpdate(testId, req.body, {
+    const updatedTest = await Test.findByIdAndUpdate(id, req.body, {
       new: true,
       runValidators: true,
     });
